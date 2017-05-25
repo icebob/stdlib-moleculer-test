@@ -1,0 +1,21 @@
+{
+  "name": "moleculer-test",
+  "version": "0.0.0",
+  "description": "",
+  "author": "icebob <mereg.norbert@gmail.com>",
+  "main": "functions/__main__.js",
+  "dependencies": {
+    "moleculer": "0.7.4"
+  },
+  "private": true,
+  "stdlib": {
+    "build": "faaslang",
+    "name": "icebob/moleculer-test",
+    "timeout": 10000,
+    "publish": true,
+    "personalize": {
+      "keys": [],
+      "user": []
+    }
+  }
+}
