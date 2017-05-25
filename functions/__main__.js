@@ -17,11 +17,20 @@ broker.createService({
       return "Hello " + ctx.params.name
     }
   }
-})
+});
 
-module.exports = (name = 'world', context, callback) => {
+broker.createService({
+  name: "math",
+  actions: {
+    add(ctx) {
+      return Number(ctx.params.a) + Number(ctx.params.b);
+    }
+  }
+});
 
-  broker.call("test.hello", { name })
+module.exports = (context, callback) => {
+  console.log(context.params);
+  broker.call(context.params.action, context.params)
     .then(res => callback(null, res))
     .catch(callback);
 
